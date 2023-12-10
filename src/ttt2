@@ -1,0 +1,765 @@
+import * as React from "react";
+import { Image } from "expo-image";
+import { StyleSheet, View, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
+
+const MainTest = () => {
+  return (
+    <View style={styles.mainTest}>
+      <View style={styles.groupParent}>
+        <View style={styles.image20Parent}>
+          <Image
+            style={styles.groupParent}
+            contentFit="cover"
+            source={require("../assets/image-20.png")}
+          />
+          <LinearGradient
+            style={[styles.groupChild, styles.groupChildShadowBox]}
+            locations={[0, 1]}
+            colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+          />
+          <Text style={[styles.text, styles.textLayout]}>Наши умельцы</Text>
+          <Image
+            style={styles.icon}
+            contentFit="cover"
+            source={require("../assets/icon.png")}
+          />
+        </View>
+        <View style={[styles.rectangleParent, styles.groupItemLayout]}>
+          <LinearGradient
+            style={[styles.groupItem, styles.groupItemLayout]}
+            locations={[0, 1]}
+            colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+          />
+          <Text style={[styles.text1, styles.textLayout]}>События</Text>
+          <Image
+            style={[styles.icon1, styles.iconLayout2]}
+            contentFit="cover"
+            source={require("../assets/icon1.png")}
+          />
+        </View>
+        <View style={[styles.rectangleGroup, styles.groupLayout]}>
+          <LinearGradient
+            style={[styles.groupInner, styles.groupLayout]}
+            locations={[0, 1]}
+            colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+          />
+          <Text style={[styles.text2, styles.text2Layout]}>Такси</Text>
+          <Image
+            style={[styles.vectorIcon, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/vector.png")}
+          />
+        </View>
+        <View style={[styles.rectangleContainer, styles.groupViewPosition]}>
+          <LinearGradient
+            style={[styles.rectangleLineargradient, styles.groupLayout]}
+            locations={[0, 1]}
+            colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+          />
+          <Text style={[styles.text3, styles.textTypo3]}>Скидки</Text>
+          <Image
+            style={[styles.icon2, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/icon2.png")}
+          />
+        </View>
+        <View style={[styles.groupView, styles.groupViewPosition]}>
+          <LinearGradient
+            style={[styles.groupChild1, styles.groupLayout]}
+            locations={[0, 1]}
+            colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+          />
+          <Text style={[styles.text4, styles.textTypo3]}>Вакансии</Text>
+          <Image
+            style={[styles.icon3, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/icon3.png")}
+          />
+        </View>
+      </View>
+      <View style={styles.groupContainer}>
+        <Image
+          style={[styles.groupIcon, styles.text2Layout]}
+          contentFit="cover"
+          source={require("../assets/group-4.png")}
+        />
+        <View style={styles.parent}>
+          <Text style={[styles.text5, styles.textFlexBox]}>18:21</Text>
+          <Text style={[styles.text6, styles.textFlexBox]}>97%</Text>
+          <Image
+            style={styles.wifiSvgrepoCom1Icon}
+            contentFit="cover"
+            source={require("../assets/wifisvgrepocom-1.png")}
+          />
+          <Image
+            style={[styles.batterySvgrepoCom1Icon, styles.text9Position]}
+            contentFit="cover"
+            source={require("../assets/batterysvgrepocom-1.png")}
+          />
+        </View>
+      </View>
+      <View style={[styles.torreliveWrapper, styles.torreliveLayout]}>
+        <Text style={[styles.torrelive, styles.torreliveLayout]}>
+          TorreLive
+        </Text>
+      </View>
+      <View
+        style={[
+          styles.torrelivegpgmailcomParent,
+          styles.torrelivegpgmailcomLayout,
+        ]}
+      >
+        <Text
+          style={[styles.torrelivegpgmailcom, styles.torrelivegpgmailcomLayout]}
+        >
+          torrelive.gp@gmail.com
+        </Text>
+        <Text style={styles.text7}>@</Text>
+      </View>
+      <View style={[styles.group, styles.groupPosition]}>
+        <Text style={[styles.text8, styles.textTypo2]}>
+          +1 111 111 1111 (с 8:00 - 15:00)
+        </Text>
+        <Image
+          style={[styles.whatsappIcon, styles.groupPosition]}
+          contentFit="cover"
+          source={require("../assets/whatsapp.png")}
+        />
+        <Image
+          style={[styles.telegramAppIcon, styles.textLayout]}
+          contentFit="cover"
+          source={require("../assets/telegram-app.png")}
+        />
+      </View>
+      <View style={[styles.rectangleParent1, styles.groupChild2Layout]}>
+        <LinearGradient
+          style={[styles.groupChild2, styles.groupChild2Layout]}
+          locations={[0, 1]}
+          colors={["#acd3d2", "rgba(150, 255, 252, 0)"]}
+        />
+        <Text style={[styles.text9, styles.text9Position]}>
+          Водитель-курьер
+        </Text>
+        <Text style={[styles.text10, styles.textTypo1]}>
+          · Документы · Испанский · Англиский · Русский · Машина
+        </Text>
+        <Image
+          style={[styles.image24Icon, styles.text10Position]}
+          contentFit="cover"
+          source={require("../assets/image-24.png")}
+        />
+      </View>
+      <Image
+        style={[styles.icon4, styles.iconLayout2]}
+        contentFit="cover"
+        source={require("../assets/icon4.png")}
+      />
+      <View style={[styles.rectangleParent2, styles.rectangleLayout]}>
+        <View style={[styles.rectangleView, styles.rectangleLayout]} />
+        <Text style={[styles.text11, styles.offTypo]}>20%</Text>
+        <Text style={[styles.off, styles.offTypo]}>OFF</Text>
+      </View>
+      <Text
+        style={[styles.text12, styles.textTypo]}
+      >{`Только с  6  по 12 Декабря `}</Text>
+      <Image
+        style={[styles.mainTestChild, styles.mainLayout]}
+        contentFit="cover"
+        source={require("../assets/ellipse-15.png")}
+      />
+      <Image
+        style={[styles.mainTestItem, styles.mainLayout]}
+        contentFit="cover"
+        source={require("../assets/ellipse-16.png")}
+      />
+      <Text style={[styles.text13, styles.textTypo]}>Связаться с нами</Text>
+      <Image
+        style={[styles.telegramAppIcon1, styles.iconLayout]}
+        contentFit="cover"
+        source={require("../assets/telegram-app1.png")}
+      />
+      <Image
+        style={[styles.whatsappIcon1, styles.iconLayout]}
+        contentFit="cover"
+        source={require("../assets/whatsapp1.png")}
+      />
+      <Image
+        style={[styles.backgroundIcon, styles.iconLayout2]}
+        contentFit="cover"
+        source={require("../assets/background.png")}
+      />
+      <Image
+        style={styles.image26Icon}
+        contentFit="cover"
+        source={require("../assets/image-26.png")}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  groupChildShadowBox: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+  },
+  textLayout: {
+    height: 21,
+    position: "absolute",
+  },
+  groupItemLayout: {
+    height: 83,
+    width: 140,
+    position: "absolute",
+  },
+  iconLayout2: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    position: "absolute",
+    overflow: "hidden",
+  },
+  groupLayout: {
+    width: 140,
+    height: 80,
+    position: "absolute",
+  },
+  text2Layout: {
+    height: 20,
+    position: "absolute",
+  },
+  iconPosition: {
+    left: "41.07%",
+    maxWidth: "100%",
+    maxHeight: "100%",
+    position: "absolute",
+    overflow: "hidden",
+  },
+  groupViewPosition: {
+    top: 185,
+    width: 140,
+    height: 80,
+    position: "absolute",
+  },
+  textTypo3: {
+    top: 43,
+    height: 20,
+    textAlign: "left",
+    color: Color.colorGray_100,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_base,
+    position: "absolute",
+  },
+  textFlexBox: {
+    justifyContent: "center",
+    fontFamily: FontFamily.interRegular,
+    alignItems: "center",
+    display: "flex",
+    textAlign: "center",
+    color: Color.colorBlack,
+    fontSize: FontSize.size_sm,
+    height: 17,
+    top: 0,
+    position: "absolute",
+  },
+  text9Position: {
+    top: 3,
+    position: "absolute",
+  },
+  torreliveLayout: {
+    height: 48,
+    width: 237,
+    left: "50%",
+    position: "absolute",
+  },
+  torrelivegpgmailcomLayout: {
+    width: 198,
+    height: 20,
+    position: "absolute",
+  },
+  groupPosition: {
+    top: 761,
+    height: 20,
+    position: "absolute",
+  },
+  textTypo2: {
+    color: Color.colorBlack,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+  },
+  groupChild2Layout: {
+    height: 214,
+    width: 314,
+    position: "absolute",
+  },
+  textTypo1: {
+    fontSize: FontSize.size_2xs,
+    textAlign: "left",
+  },
+  text10Position: {
+    left: 7,
+    position: "absolute",
+  },
+  rectangleLayout: {
+    width: 37,
+    position: "absolute",
+  },
+  offTypo: {
+    transform: [
+      {
+        rotate: "33.66deg",
+      },
+    ],
+    color: Color.colorRed,
+    fontSize: FontSize.size_2xs,
+    textAlign: "left",
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    position: "absolute",
+  },
+  textTypo: {
+    fontFamily: FontFamily.montserratSemiBoldItalic,
+    fontStyle: "italic",
+    color: Color.colorBlack,
+    fontWeight: "600",
+    position: "absolute",
+  },
+  mainLayout: {
+    height: 10,
+    width: 10,
+    top: 639,
+    position: "absolute",
+  },
+  iconLayout: {
+    width: 21,
+    top: 761,
+    height: 21,
+    position: "absolute",
+  },
+  groupParent: {
+    height: 792,
+    width: 360,
+    left: 0,
+    top: 0,
+    position: "absolute",
+  },
+  groupChild: {
+    top: 375,
+    height: 80,
+    backgroundColor: "transparent",
+    width: 300,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    left: 30,
+    position: "absolute",
+  },
+  text: {
+    top: 418,
+    left: 114,
+    width: 133,
+    textAlign: "left",
+    color: Color.colorGray_100,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_base,
+  },
+  icon: {
+    height: "2.94%",
+    marginLeft: -12.8,
+    top: "49.31%",
+    bottom: "47.75%",
+    width: 25,
+    maxHeight: "100%",
+    left: "50%",
+    position: "absolute",
+  },
+  image20Parent: {
+    shadowColor: "rgba(0, 0, 0, 0.15)",
+    shadowRadius: 9,
+    elevation: 9,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    height: 792,
+    width: 360,
+    left: 0,
+    top: 0,
+    position: "absolute",
+  },
+  groupItem: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    left: 0,
+    top: 0,
+  },
+  text1: {
+    top: 46,
+    left: 33,
+    width: 75,
+    textAlign: "left",
+    color: Color.colorGray_100,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_base,
+  },
+  icon1: {
+    height: "28.61%",
+    width: "19.29%",
+    top: "20.69%",
+    right: "40.36%",
+    bottom: "50.69%",
+    left: "40.36%",
+  },
+  rectangleParent: {
+    top: 282,
+    left: 190,
+  },
+  groupInner: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    left: 0,
+    top: 0,
+  },
+  text2: {
+    top: 44,
+    width: 50,
+    left: 45,
+    textAlign: "left",
+    color: Color.colorGray_100,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_base,
+  },
+  vectorIcon: {
+    height: "27.5%",
+    top: "23.13%",
+    bottom: "49.38%",
+    left: "41.07%",
+    right: "41.79%",
+    width: "17.14%",
+  },
+  rectangleGroup: {
+    top: 281,
+    left: 30,
+  },
+  rectangleLineargradient: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    left: 0,
+    top: 0,
+  },
+  text3: {
+    left: 38,
+    width: 65,
+  },
+  icon2: {
+    height: "31.25%",
+    width: "17.86%",
+    top: "19.38%",
+    right: "41.07%",
+    bottom: "49.38%",
+    left: "41.07%",
+  },
+  rectangleContainer: {
+    left: 190,
+  },
+  groupChild1: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    left: 0,
+    top: 0,
+  },
+  text4: {
+    left: 28,
+    width: 84,
+  },
+  icon3: {
+    height: "26.25%",
+    top: "23.12%",
+    bottom: "50.63%",
+    right: "41.79%",
+    width: "17.14%",
+  },
+  groupView: {
+    left: 30,
+  },
+  groupIcon: {
+    top: 799,
+    left: 54,
+    width: 210,
+  },
+  text5: {
+    width: 34,
+    left: 0,
+  },
+  text6: {
+    left: 282,
+    width: 28,
+  },
+  wifiSvgrepoCom1Icon: {
+    top: 2,
+    left: 264,
+    width: 14,
+    height: 14,
+    position: "absolute",
+    overflow: "hidden",
+  },
+  batterySvgrepoCom1Icon: {
+    left: 310,
+    width: 12,
+    height: 12,
+    overflow: "hidden",
+  },
+  parent: {
+    height: 17,
+    width: 322,
+    left: 0,
+    top: 0,
+    position: "absolute",
+  },
+  groupContainer: {
+    top: 9,
+    left: 19,
+    height: 819,
+    width: 322,
+    position: "absolute",
+  },
+  torrelive: {
+    marginLeft: -118.5,
+    fontSize: 48,
+    fontWeight: "800",
+    fontFamily: FontFamily.montserratExtraBold,
+    color: "#a7d1d0",
+    textShadowColor: "rgba(0, 0, 0, 0.25)",
+    textShadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    textShadowRadius: 4,
+    textAlign: "left",
+    top: 0,
+  },
+  torreliveWrapper: {
+    marginLeft: -118,
+    top: 55,
+  },
+  torrelivegpgmailcom: {
+    color: Color.colorBlack,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    textAlign: "left",
+    fontSize: FontSize.size_base,
+    left: 0,
+    top: 0,
+  },
+  text7: {
+    top: -4,
+    left: -37,
+    fontSize: 18,
+    fontWeight: "700",
+    fontFamily: FontFamily.montserratBold,
+    color: "#f66a13",
+    width: 20,
+    height: 22,
+    display: "none",
+    textAlign: "left",
+    position: "absolute",
+  },
+  torrelivegpgmailcomParent: {
+    top: 741,
+    left: 81,
+  },
+  text8: {
+    textAlign: "center",
+    fontSize: FontSize.size_base,
+    color: Color.colorBlack,
+    left: 0,
+    top: 0,
+    position: "absolute",
+  },
+  whatsappIcon: {
+    width: 24,
+    display: "none",
+    left: 45,
+  },
+  telegramAppIcon: {
+    top: 759,
+    left: 20,
+    width: 23,
+    display: "none",
+  },
+  group: {
+    left: 72,
+    width: 211,
+  },
+  groupChild2: {
+    backgroundColor: "transparent",
+    elevation: 4,
+    shadowRadius: 4,
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 4,
+      height: 2,
+    },
+    left: 0,
+    top: 0,
+  },
+  text9: {
+    left: 86,
+    color: Color.colorBlack,
+    fontFamily: FontFamily.montserratSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_sm,
+    top: 3,
+    textAlign: "left",
+  },
+  text10: {
+    top: 182,
+    fontWeight: "500",
+    fontFamily: FontFamily.montserratMedium,
+    width: 296,
+    left: 7,
+    position: "absolute",
+    alignItems: "center",
+    display: "flex",
+    fontSize: FontSize.size_2xs,
+    color: Color.colorBlack,
+  },
+  image24Icon: {
+    top: 23,
+    borderRadius: Border.br_xs,
+    height: 156,
+    left: 7,
+    width: 300,
+  },
+  rectangleParent1: {
+    top: 477,
+    left: 27,
+  },
+  icon4: {
+    height: "3.96%",
+    width: "9.17%",
+    top: "56.24%",
+    right: "85.97%",
+    bottom: "39.8%",
+    left: "4.86%",
+  },
+  rectangleView: {
+    top: 1,
+    borderTopRightRadius: Border.br_xs,
+    borderBottomLeftRadius: 7,
+    backgroundColor: "rgba(0, 0, 0, 0.54)",
+    height: 31,
+    left: 0,
+  },
+  text11: {
+    top: 10,
+    left: 9,
+    width: 27,
+    height: 11,
+  },
+  off: {
+    left: 17,
+    top: 0,
+  },
+  rectangleParent2: {
+    top: 499,
+    left: 297,
+    height: 34,
+  },
+  text12: {
+    top: 504,
+    left: 37,
+    fontSize: FontSize.size_2xs,
+    textAlign: "left",
+  },
+  mainTestChild: {
+    left: 170,
+  },
+  mainTestItem: {
+    left: 188,
+  },
+  text13: {
+    top: 725,
+    fontSize: 13,
+    left: 27,
+    textAlign: "center",
+  },
+  telegramAppIcon1: {
+    left: 304,
+  },
+  whatsappIcon1: {
+    left: 283,
+  },
+  backgroundIcon: {
+    height: "2.52%",
+    width: "7.5%",
+    top: "11.52%",
+    right: "66.94%",
+    bottom: "85.95%",
+    left: "25.56%",
+  },
+  image26Icon: {
+    top: 344,
+    left: 141,
+    width: 41,
+    height: 43,
+    position: "absolute",
+  },
+  mainTest: {
+    backgroundColor: "#fff",
+    flex: 1,
+    width: "100%",
+    height: 833,
+    overflow: "hidden",
+  },
+});
+
+export default MainTest;
