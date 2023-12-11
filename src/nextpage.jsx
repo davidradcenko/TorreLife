@@ -6,6 +6,8 @@ import {
   ScrollView,
   SafeAreaView,
   TouchableOpacity,
+  Button,
+  Linking,
 } from "react-native";
 import { styles } from "./styles/nextpage.style";
 import { ButtonTail } from "./buttons/buttons";
@@ -20,8 +22,39 @@ import { AbsTails } from "./abs/absTails";
 
 import WhatSup from "../assets/contact/WhatsApp.svg";
 import Telegramm from "../assets/contact/TelegramApp.svg";
+import Toast from "react-native-toast-message";
+
+import * as Clipboard from "expo-clipboard";
 
 function DetailsScreen({ navigation }) {
+  const showToast = () => {
+    Toast.show({
+      type: "success",
+      text1: "Hello",
+      text2: "This is some something 👋",
+    });
+  };
+
+  const copyToClipboard = async () => {
+    await Clipboard.setStringAsync("+1 111 111 1111");
+    // setCopiedText('+1 111 111 1111');
+    showToast();
+  };
+
+  const fetchCopiedText = async () => {
+    const text = await Clipboard.getStringAsync();
+    setCopiedText(text);
+  };
+
+  const openTelegram = () => {
+    const telegramUsername = "DavidRadchenko";
+    Linking.openURL(`tg://resolve?domain=${telegramUsername}`);
+  };
+  const openWhatsApp = () => {
+    const WhatAppUsername = "+34691624964";
+    Linking.openURL(`whatsapp://send?phone=${WhatAppUsername}`);
+  };
+
   return (
     <ImageBackground
       style={styles.BackImage}
@@ -63,9 +96,6 @@ function DetailsScreen({ navigation }) {
             <Text style={[BlobalyStyles.text_Bold600_s16, { fontSize: 13 }]}>
               Связаться с нами
             </Text>
-            <Text style={BlobalyStyles.text_Bold600_s16}>
-              torrelive.gp@gmail.com
-            </Text>
             <View
               style={{
                 alignItems: "center",
@@ -76,19 +106,29 @@ function DetailsScreen({ navigation }) {
                 marginBottom: 5,
               }}
             >
-             
-                <View>
-                  <Text
-                    selectable={true}
-                    style={[BlobalyStyles.text_Bold600_s16]}
-                  >
-                    +1 111 111 1111 (с 8:00 - 15:00)
-                  </Text>
-                </View>
-              
+              <TouchableOpacity onPress={copyToClipboard}>
+                <Text
+                  selectable={true}
+                  style={[BlobalyStyles.text_Bold600_s16]}
+                >
+                  +1 111 111 1111 (с 8:00 - 15:00)
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View
+              style={{ marginTop: 5, marginBottom: 10, flexDirection: "row" }}
+            >
+              <TouchableOpacity
+                onPress={openWhatsApp}
+                activeOpacity={0.7}
+                style={styles.buttonContainer}
+              >
+                <WhatSup style={{ width: 25, height: 25, marginRight: 70 }} />
+              </TouchableOpacity>
 
-              <WhatSup />
-              <Telegramm />
+              <TouchableOpacity onPress={openTelegram}>
+                <Telegramm style={{ width: 35, height: 25 }} />
+              </TouchableOpacity>
             </View>
           </View>
         </SafeAreaView>

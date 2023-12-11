@@ -1,16 +1,68 @@
+import React from 'react';
 import SwiperFlatList from "react-native-swiper-flatlist";
 import { Button, View, Text, StyleSheet, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import BigdiscountIcon from "../../assets/view2/BidDiscount.svg";
 import { BlobalyStyles } from "../styles/blobaly.style";
+import Swiper from "react-native-swiper";
 
 
 
 
-const colors = ["tomato", "thistle", "skyblue", "teal","tomato"];
 
 
-export const AbsTails = ({image,text,discountProcent,time}) => {
+const CartDiscount = () => {
+
+  return (
+    <View style={[styles.ABSchild]}>
+      <LinearGradient
+        width={314}
+        height={"100%"}
+        style={[styles.TailView]}
+        colors={["#ACD3D2", "rgba(150, 255, 252, 0.00)"]}
+      >
+        <Text style={[styles.absHeadText, BlobalyStyles.text_Bold600_s16]}>
+          Водитель-курьер
+        </Text>
+        <View style={styles.container}>
+          <View style={[styles.child]}>
+            <Text
+              style={[
+                styles.AbsTimeDiscount,
+                BlobalyStyles.text_Bold600_s11,
+                { color: "#000", fontStyle: "italic" },
+              ]}
+            >
+              Только с 6 по 12 Декабря
+            </Text>
+            <View style={styles.AbsDiscountLabel}>
+              <Text
+                style={[
+                  styles.AbsDiscountLabel_Text,
+                  BlobalyStyles.text_Bold600_s11,
+                ]}
+              >
+                OFF 20%
+              </Text>
+            </View>
+            <Image
+              style={{
+                width: 300,
+                height: 156,
+                borderRadius: 12,
+              }}
+              source={require("../../assets/view2/SportImageTest.png")}
+            />
+          </View>
+        </View>
+        <Text style={BlobalyStyles.text_Bold500_s11}>
+          · Документы · Испанский · Англиский · Русский · Машина
+        </Text>
+      </LinearGradient>
+    </View>
+  );
+};
+export const AbsTails = ({ image, text, discountProcent, time }) => {
   return (
     <View
       style={[
@@ -23,62 +75,15 @@ export const AbsTails = ({image,text,discountProcent,time}) => {
           borderRadius: 20,
         },
       ]}
-    >
+    > 
       <BigdiscountIcon style={styles.bigDiscaunt} />
-      <SwiperFlatList
-        autoplayLoop
-        index={1}
-        data={colors}
-        widthSlider={314}
-        heightSlider={214}
-        autoplay
-        autoplayDelay={4}
-        //showPagination
-        // disableGesture={true}
-        renderItem={({ item }) => (
-          <View style={[styles.ABSchild]}>
-            <LinearGradient
-              width={314}
-              height={"100%"}
-              style={[styles.TailView]}
-              colors={["#ACD3D2", "rgba(150, 255, 252, 0.00)"]}
-            >
-              <Text
-                style={[styles.absHeadText, BlobalyStyles.text_Bold600_s16]}
-              >
-                Водитель-курьер
-              </Text>
-              <View style={styles.container}>
-                
-                    <View style={[styles.child]}>
-                    <Text style={[styles.AbsTimeDiscount,BlobalyStyles.text_Bold600_s11,{color:'#000',fontStyle:'italic'}]}>Только с 6 по 12 Декабря</Text>
-                      <View style={styles.AbsDiscountLabel}>
-                        <Text
-                          style={[
-                            styles.AbsDiscountLabel_Text,
-                            BlobalyStyles.text_Bold600_s11,
-                          ]}
-                        >
-                          OFF 20%
-                        </Text>
-                      </View>
-                      <Image
-                        style={{
-                          width: 300,
-                          height: 156,
-                          borderRadius: 12,
-                        }}
-                        source={require("../../assets/view2/SportImageTest.png")}
-                      />
-                    </View>
-              </View>
-              <Text style={BlobalyStyles.text_Bold500_s11}>
-                · Документы · Испанский · Англиский · Русский · Машина
-              </Text>
-            </LinearGradient>
-          </View>
-        )}
-      />
+
+      <Swiper width={314} height={214} autoplay>
+        <CartDiscount />
+        <CartDiscount />
+        <CartDiscount />
+        <CartDiscount />
+      </Swiper>
     </View>
   );
 };
@@ -88,11 +93,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 24,
   },
-  AbsTimeDiscount:{
-position:'absolute',
-top:0,
-left:10,
-zIndex:1
+  AbsTimeDiscount: {
+    position: "absolute",
+    top: 0,
+    left: 10,
+    zIndex: 1,
   },
   ABS: {
     width: 314,

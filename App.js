@@ -13,7 +13,12 @@ import MyIcon from "./assets/view1/image29.svg";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DetailsScreen from "./src/nextpage";
-import Profile, { HooksSample } from "./src/abs/testABS";
+import Profile, { Foo, HooksSample } from "./src/abs/testABS";
+import SwiperComponent from "./src/abs/testABS";
+import MySlider from "./src/abs/testABS";
+import Appddddd from "./src/abs/testABS";
+import Toast from "react-native-toast-message";
+import MainMenu from "./src/abs/testABS";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,14 +33,16 @@ export default function App() {
   }
   return (
     <NavigationContainer>
+    
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
         initialRouteName="Details"
       >
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-        {/* <Stack.Screen name="Details" component={HooksSample} /> */}
+        {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+        <Stack.Screen name="Details" component={MainMenu} />
       </Stack.Navigator>
+      <Toast />
     </NavigationContainer>
   );
 }
