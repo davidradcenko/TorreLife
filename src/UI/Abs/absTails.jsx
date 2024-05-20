@@ -1,28 +1,23 @@
-import React from 'react';
+import React from "react";
 import SwiperFlatList from "react-native-swiper-flatlist";
 import { Button, View, Text, StyleSheet, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import BigdiscountIcon from "../../assets/view2/BidDiscount.svg";
-import { BlobalyStyles } from "../styles/blobaly.style";
+import BigdiscountIcon from "@assets/view2/BidDiscount.svg";
+import { BlobalyStyles } from "../../styles/blobaly.style";
 import Swiper from "react-native-swiper";
+import { useSelector } from "react-redux";
 
-
-
-
-
-
-const CartDiscount = () => {
-
+const CartDiscount = (props) => {
   return (
-    <View style={[styles.ABSchild]}>
+    <View key={props._id} id={props._id} style={[styles.ABSchild]}>
       <LinearGradient
         width={314}
         height={"100%"}
         style={[styles.TailView]}
-        colors={["#ACD3D2", "rgba(150, 255, 252, 0.00)"]}
+        colors={["rgba(153, 249, 247, 1)", "rgba(150, 255, 252, 0.00)"]}
       >
         <Text style={[styles.absHeadText, BlobalyStyles.text_Bold600_s16]}>
-          Водитель-курьер
+          {props.title}
         </Text>
         <View style={styles.container}>
           <View style={[styles.child]}>
@@ -33,7 +28,7 @@ const CartDiscount = () => {
                 { color: "#000", fontStyle: "italic" },
               ]}
             >
-              Только с 6 по 12 Декабря
+              {props.body_text}
             </Text>
             <View style={styles.AbsDiscountLabel}>
               <Text
@@ -51,7 +46,7 @@ const CartDiscount = () => {
                 height: 156,
                 borderRadius: 12,
               }}
-              source={require("../../assets/view2/SportImageTest.png")}
+              source={require("@assets/view2/SportImageTest.png")}
             />
           </View>
         </View>
@@ -63,6 +58,7 @@ const CartDiscount = () => {
   );
 };
 export const AbsTails = ({ image, text, discountProcent, time }) => {
+  const posts = useSelector((state) => state.posts.posts);
   return (
     <View
       style={[
@@ -75,14 +71,19 @@ export const AbsTails = ({ image, text, discountProcent, time }) => {
           borderRadius: 20,
         },
       ]}
-    > 
+    >
       <BigdiscountIcon style={styles.bigDiscaunt} />
 
-      <Swiper width={314} height={214} autoplay>
-        <CartDiscount />
-        <CartDiscount />
-        <CartDiscount />
-        <CartDiscount />
+      <Swiper
+        width={314}
+        height={214}
+        showsPagination={false}
+        autoplay
+        autoplayTimeout={4}
+      >
+        {posts.map((item) => (
+          <CartDiscount key={item._id} body_text={item.body_text} />
+        ))}
       </Swiper>
     </View>
   );

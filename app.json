@@ -18,6 +18,10 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "INTERNET",
+        "ACCESS_FINE_LOCATION"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -26,5 +30,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
+    
   }
 }
