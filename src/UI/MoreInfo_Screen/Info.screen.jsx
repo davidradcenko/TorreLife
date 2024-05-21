@@ -35,8 +35,7 @@ import IconTowel from "@assets/comfort/Towel.svg";
 import { ButtonTail } from "../Buttons/buttons";
 import { SlidingModal } from "./Modal/BackConnect";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
-
+import { useNavigation } from "@react-navigation/native";
 
 const Info = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -52,6 +51,10 @@ const Info = () => {
   const [blinkAnimation] = useState(new Animated.Value(1));
   const [bounceAnimation] = useState(new Animated.Value(0));
 
+  const navigationLink = useNavigation();
+  const handelGoBack = () => {
+    navigationLink.navigate("Details");
+  };
   useEffect(() => {
     const blink = Animated.loop(
       Animated.sequence([
@@ -100,48 +103,29 @@ const Info = () => {
       style={[stylesInfo.background, { flex: 1 }]}
       source={require("@assets/view2/background.jpg")}
     >
-      
-
-      <View style={{ position: "absolute", top: 30, left: 15, zIndex: 2 }}>
-
-
-
-
-
-
-
-      <Animated.View
-            style={[
-              styles.blinkingElement,
-              {
-                opacity: blinkAnimation,
-                transform: [
-                  {
-                    translateX: bounceAnimation.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [0, -10], // Регулируйте высоту подпрыгивания
-                    }),
-                  },
-                ],
-              },
-            ]}
-          >
-             <GoBack />
-          </Animated.View>
-
-
-
-
-
-
-
-
-
-
-
-
-         
-        </View>
+      <View
+        style={{ position: "absolute", top: 30, left: 15, zIndex: 2 }}
+        
+      >
+        <Animated.View
+          style={[
+            styles.blinkingElement,
+            {
+              opacity: blinkAnimation,
+              transform: [
+                {
+                  translateX: bounceAnimation.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, -10], // Регулируйте высоту подпрыгивания
+                  }),
+                },
+              ],
+            },
+          ]}
+        >
+          <GoBack onPress={handelGoBack} />
+        </Animated.View>
+      </View>
 
       <ScrollView>
         {/* swiper */}
@@ -190,7 +174,7 @@ const Info = () => {
 
           <View style={{ flexDirection: "row", marginTop: 10 }}>
             <IconAcesst />
-            <Text style={{ marginLeft: 5 }}>Приём по записи</Text>
+            <Text  style={{ marginLeft: 5 }}>Приём по записи</Text>
           </View>
 
           <View

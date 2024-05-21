@@ -92,16 +92,18 @@ React.useEffect(()=>{
                 title="Вакансии"
                 TypeOfIcon={vacansiaIcon}
                 ButtonHeight={80}
+                linkNameWhenHundel={'OtherInfo'}
               />
-              <ButtonTail size={140} title="Скидки" TypeOfIcon={discountIcon} ButtonHeight={80} />
+              <ButtonTail linkNameWhenHundel={'Info'} size={140} title="Скидки" TypeOfIcon={discountIcon} ButtonHeight={80} />
             </View>
             <View style={styles.TailsLittle}>
-              <ButtonTail size={140} title="Такси" TypeOfIcon={taxiIcon} ButtonHeight={80} />
-              <ButtonTail size={140} title="События" TypeOfIcon={voiceIcon} ButtonHeight={80} />
+              <ButtonTail linkNameWhenHundel={'Info'} size={140} title="Такси" TypeOfIcon={taxiIcon} ButtonHeight={80} />
+              <ButtonTail linkNameWhenHundel={'Info'} size={140} title="События" TypeOfIcon={voiceIcon} ButtonHeight={80} />
             </View>
             <View style={styles.TailsLittle}>
               <ButtonTail
                 size={300}
+                linkNameWhenHundel={'MapCityScreen'}
                 title="Наши умельцы"
                 TypeOfIcon={mapIcon}
                 ButtonHeight={80}

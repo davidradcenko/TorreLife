@@ -15,8 +15,13 @@ import VacansiaIcon from "@assets/view2/vacansia.svg";
 import IconSportTest from "@assets/view2/4723250.jpg";
 import IconBackground from "@assets/view2/background.jpg";
 import { locations } from "@api/initialData";
+import { useNavigation } from "@react-navigation/native";
 
 const OtherInfo = () => {
+  const navigationLink = useNavigation();
+  const handelGoBack = () => {
+    navigationLink.navigate("Details");
+  };
   return (
     <View>
       <ImageBackground
@@ -38,8 +43,8 @@ const OtherInfo = () => {
             colors={["rgba(255, 255, 255, 1)", "rgba(252, 243, 228, 1)"]}
           >
             <View style={styles.MenuView}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <GoBack colors={"#307D7A"} />
+              <View  style={{ flexDirection: "row", alignItems: "center" }}>
+                <GoBack onPress={handelGoBack} colors={"#307D7A"} />
                 <Text style={BlobalyStyles.text_Bold600_s16}>Вакансии</Text>
               </View>
               <View>

@@ -161,6 +161,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
+    border: 1
   },
   map: {
     flex: 1,

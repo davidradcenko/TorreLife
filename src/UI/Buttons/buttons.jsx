@@ -3,33 +3,52 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Text, Image, View } from "react-native";
 import { BlobalyStyles } from "../../styles/blobaly.style";
 import ShadowGenerator from "react-native-shadow-generator";
+import { useNavigation, useRoute } from "@react-navigation/native";
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
-export const ButtonTail = ({ onPress, title, size, TypeOfIcon,ButtonHeight }) => (
-  // <ShadowGenerator style={styles.container}>
-  <TouchableOpacity
-    onPress={onPress}
-    style={[styles.appButtonContainer, { width: size + 0.6, height:ButtonHeight+ 0.6 },styles.buttonContainer]}
-    activeOpacity={0.7}
-    delayPressIn={50}
-    delayPressOut={50}
-  >
-    <LinearGradient
-      width={size}
-      height={ButtonHeight}
-      style={[styles.TailView]}
-      colors={["#ACD3D2", "rgba(150, 255, 252, 1)"]}
+export const ButtonTail = ({
+  onPress,
+  title,
+  size,
+  TypeOfIcon,
+  ButtonHeight,
+  linkNameWhenHundel
+}) => {
+  const linkRedirect = useNavigation()
+
+  const handelButton = ()=>{
+    linkRedirect.navigate(linkNameWhenHundel)
+  }
+  return (
+    // <ShadowGenerator style={styles.container}>
+    <TouchableOpacity
+      onPress={handelButton}
+      style={[
+        styles.appButtonContainer,
+        { width: size + 0.6, height: ButtonHeight + 0.6 },
+        styles.buttonContainer,
+      ]}
+      activeOpacity={0.7}
+      delayPressIn={50}
+      delayPressOut={50}
     >
-      {TypeOfIcon ? <TypeOfIcon style={styles.imageIcon} /> : null}
-      <Text style={BlobalyStyles.text_Bold600_s16}>{title}</Text>
-    </LinearGradient>
-  </TouchableOpacity>
-  // </ShadowGenerator>
-);
+      <LinearGradient
+        width={size}
+        height={ButtonHeight}
+        style={[styles.TailView]}
+        colors={["#ACD3D2", "rgba(150, 255, 252, 1)"]}
+      >
+        {TypeOfIcon ? <TypeOfIcon style={styles.imageIcon} /> : null}
+        <Text style={BlobalyStyles.text_Bold600_s16}>{title}</Text>
+      </LinearGradient>
+    </TouchableOpacity>
+    // </ShadowGenerator>
+  );
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor:"rgba(0, 0, 0, 0.20)",
+    backgroundColor: "rgba(0, 0, 0, 0.20)",
     shadowColor: "#000000",
     shadowOffset: {
       width: 0,
