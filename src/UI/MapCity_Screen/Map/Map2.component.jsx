@@ -11,7 +11,7 @@ import {
 import { MapViewComponent } from "./MapView.component";
 import { MapAnimatable } from "./MapAnimatable.component";
 import { SearchButton } from "../Search/Search.component";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { GestureHandlerRootView  } from "react-native-gesture-handler";
 import { locations } from "../../../api/initialData";
 import SetMyLocationImg from "@assets/icons/SetMyLocation.svg";
 
@@ -114,8 +114,9 @@ export const MapComponent2 = () => {
         setQuery={setQuery}
         inputRef={inputRef}
       />
-      <GestureHandlerRootView>
-        <TouchableWithoutFeedback onPress={handlePressOutside}>
+      
+      
+        {/* <TouchableWithoutFeedback onPress={handlePressOutside}> */}
           <MapViewComponent
             handlePressOutside={handlePressOutside}
             mapViewRef={mapViewRef}
@@ -124,18 +125,18 @@ export const MapComponent2 = () => {
             openModal={openModal}
             Currentlocation={currentUserLocation}
           />
-        </TouchableWithoutFeedback>
-
+        {/* </TouchableWithoutFeedback> */}
+        {/* <GestureHandlerRootView > */}
         <View
           style={{
             position: "absolute",
-            top: "50%",
+            top: "50px",
             right: 0,
             backgroundColor: "white",
             width: 50,
             height: 50,
             borderRadius: 100,
-            // zIndex: 1,
+             zIndex: 1000,
             borderWidth: 0.3,
             borderColor: "#0AC8BE",
             alignItems: "center",
@@ -147,12 +148,12 @@ export const MapComponent2 = () => {
           </TouchableOpacity>
         </View>
 
-        <MapAnimatable
+        {/* <MapAnimatable
           isModalVisible={isModalVisible}
           selectedLocation={selectedLocation}
           closeModal={closeModal}
-        />
-      </GestureHandlerRootView>
+        /> */}
+      {/* </GestureHandlerRootView> */}
     </View>
   );
 };

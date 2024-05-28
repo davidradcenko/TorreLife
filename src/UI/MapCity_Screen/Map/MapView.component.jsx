@@ -67,7 +67,7 @@ export const MapViewComponent = ({
   return (
     <TouchableWithoutFeedback onPress={handlePressOutside}>
       <MapView
-        style={{ width: "100%", height: height - 100 }}
+        style={{ width: "100%", height: height - 100}}
         ref={mapViewRef}
         // customMapStyle={mapStyle}
         initialRegion={{

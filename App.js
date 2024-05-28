@@ -26,8 +26,7 @@ import { fetchUsers } from "src/slices/locationsSlice";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
-  console.log("App has been reload")
+  console.log("App has been reload");
   return (
     <Provider store={store}>
       <TorreLifeApp />
@@ -39,8 +38,7 @@ export const TorreLifeApp = () => {
   const [isReady, setIsReady] = useState(false);
   const dispatch = useDispatch();
 
-  console.log("TorreLifeApp has been reload")
-  
+  console.log("TorreLifeApp has been reload");
 
   const [fontsLoaded] = useFonts({
     "Montserrat-ExtraBold": require("./assets/fonts/Montserrat-ExtraBold.ttf"),
@@ -49,7 +47,7 @@ export const TorreLifeApp = () => {
   });
 
   useEffect(() => {
-    console.log("TorreLifeApp useEffect")
+    console.log("TorreLifeApp useEffect");
     dispatch(fetchUsers());
     async function prepareApp() {
       let n = setTimeout(() => cinsol(), 5000);
@@ -73,12 +71,15 @@ export const TorreLifeApp = () => {
         initialRouteName="Details"
       >
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+
+        {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
         <Stack.Screen name="Info" component={Info} />
         <Stack.Screen name="OtherInfo" component={OtherInfo} />
 
-        <Stack.Screen name="MapCityScreen" component={MapCityScreen} />
+        {/* <Stack.Screen name="MapCityScreen" component={MapCityScreen} /> */}
+        <Stack.Screen name="Details" component={MapCityScreen} />
 
+        {/* <Stack.Screen name="Details" component={Test} /> */}
         {/* <Stack.Screen name="Details" component={MapWithLocation} /> */}
       </Stack.Navigator>
       <Toast />
