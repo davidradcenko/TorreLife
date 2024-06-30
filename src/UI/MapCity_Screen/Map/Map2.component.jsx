@@ -126,7 +126,7 @@ export const MapComponent2 = () => {
             Currentlocation={currentUserLocation}
           />
         {/* </TouchableWithoutFeedback> */}
-        {/* <GestureHandlerRootView > */}
+        {/* <GestureHasndlerRootView > */}
         <View
           style={{
             position: "absolute",

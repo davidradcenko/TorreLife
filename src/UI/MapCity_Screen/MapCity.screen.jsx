@@ -11,8 +11,14 @@ import { stylesMapCity } from "./MapCyty.style";
 import { BlobalyStyles } from "../../styles/blobaly.style";
 import Iconburger from "@assets/icons/burger.svg";
 import { MapComponent2 } from "./Map/Map2.component";
+import { useNavigation } from "@react-navigation/native";
+import GoBack from "@assets/icons/GoBackLeft.svg";
 
 const MapCityScreen = () => {
+  const navigationLink = useNavigation();
+  const handelGoBack = () => {
+    navigationLink.navigate("Details");
+  };
   return (
     <ImageBackground
       style={stylesMapCity.BackImage}
@@ -23,8 +29,8 @@ const MapCityScreen = () => {
 
 
           <View style={{ paddingTop: 22, display:'flex', width:'100%', height:75, flexDirection:'row',alignItems:'center', justifyContent:'space-between'}}>
-            <TouchableOpacity style={{marginLeft:18,paddingBottom:20}} onPress={() => {}}>
-              <Iconburger />
+            <TouchableOpacity style={{marginLeft:18,paddingBottom:20}} onPress={handelGoBack}>
+              <GoBack />
             </TouchableOpacity>
             <Text style={[BlobalyStyles.textWrapper, { fontSize: 32, paddingBottom:10}]}>
               TorreLive

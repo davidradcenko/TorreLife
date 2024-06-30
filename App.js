@@ -70,17 +70,25 @@ export const TorreLifeApp = () => {
         screenOptions={{ headerShown: false }}
         initialRouteName="Details"
       >
+        {/* Previos loading screen ToreLive */}
         <Stack.Screen name="Home" component={HomeScreen} />
 
-        {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+        {/* Main menu wis navigation */}
+        <Stack.Screen name="Details" component={DetailsScreen} />
+
+        {/* Click more info about location or post */}
         <Stack.Screen name="Info" component={Info} />
+
+        {/* List of posts */}
         <Stack.Screen name="OtherInfo" component={OtherInfo} />
 
-        {/* <Stack.Screen name="MapCityScreen" component={MapCityScreen} /> */}
-        <Stack.Screen name="Details" component={MapCityScreen} />
+        {/* Map wis locations */}
+        <Stack.Screen name="MapCityScreen" component={MapCityScreen} />
+
+
+
 
         {/* <Stack.Screen name="Details" component={Test} /> */}
-        {/* <Stack.Screen name="Details" component={MapWithLocation} /> */}
       </Stack.Navigator>
       <Toast />
     </NavigationContainer>
